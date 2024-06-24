@@ -93,7 +93,7 @@ def bip44_BTC_seed_to_address(seed):
     return bip44_addr_ctx.PublicKey().ToAddress()
 
 
-def check_ETH_balance(address, etherscan_api_key, retries=3, delay=4):
+def check_ETH_balance(address, etherscan_api_key, retries=3, delay=3):
     # Etherscan API endpoint to check the balance of an address
     api_url = f"https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey={etherscan_api_key}"
 
@@ -122,7 +122,7 @@ def check_ETH_balance(address, etherscan_api_key, retries=3, delay=4):
                 return 0
 
 
-def check_BTC_balance(address, retries=3, delay=4):
+def check_BTC_balance(address, retries=3, delay=3):
     # Check the balance of the address
     for attempt in range(retries):
         try:
