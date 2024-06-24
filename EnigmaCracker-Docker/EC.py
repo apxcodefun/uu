@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from bip_utils import (
     Bip39MnemonicGenerator,
     Bip39SeedGenerator,
-    Bip32,
     Bip44,
     Bip84,
     Bip49,
