@@ -50,7 +50,7 @@ if missing_vars:
 
 def bip():
     # Generate a 12-word BIP39 mnemonic
-    return Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_16)
+    return Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_12)
 
 
 def bip44_ETH_wallet_from_seed(seed):
@@ -93,7 +93,7 @@ def bip44_BTC_seed_to_address(seed):
     return bip44_addr_ctx.PublicKey().ToAddress()
 
 
-def check_ETH_balance(address, etherscan_api_key, retries=3, delay=3):
+def check_ETH_balance(address, etherscan_api_key, retries=3, delay=2):
     # Etherscan API endpoint to check the balance of an address
     api_url = f"https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey={etherscan_api_key}"
 
@@ -122,7 +122,7 @@ def check_ETH_balance(address, etherscan_api_key, retries=3, delay=3):
                 return 0
 
 
-def check_BTC_balance(address, retries=3, delay=3):
+def check_BTC_balance(address, retries=3, delay=2):
     # Check the balance of the address
     for attempt in range(retries):
         try:
