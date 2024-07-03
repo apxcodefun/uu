@@ -50,7 +50,7 @@ if missing_vars:
 
 def bip():
     # Generate a 12-word BIP39 mnemonic
-    return Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_12)
+    return Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_16)
 
 
 def bip44_ETH_wallet_from_seed(seed):
